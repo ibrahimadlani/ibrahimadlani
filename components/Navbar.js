@@ -13,7 +13,8 @@ import NavbarItem from './NavbarItem';
 const Navbar = () => {
   const navItems = [
     { href: "#about", label: "About" },
-    { href: "#experience", label: "Experience" }
+    { href: "#experience", label: "Experience" },
+    { href: "#projects", label: "Projects" }
   ];
 
   return (

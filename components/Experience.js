@@ -34,7 +34,7 @@ const Experience = () => {
     }
     ,
     {
-      date: "Jun 21' — Aug 23'",
+      date: "Jun 21' — Aug 21'",
       role: "Software Engineer, Intern",
       type: 'Lille, France',
       company: "UPHF",
