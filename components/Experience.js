@@ -36,7 +36,7 @@ const Experience = () => {
     {
       date: "Jun 21' — Aug 21'",
       role: "Software Engineer, Intern",
-      type: 'Lille, France',
+      type: 'Valenciennes, France',
       company: "UPHF",
       companyUrl: "https://www.uphf.fr/",
       description: "Worked with a team of two engineering student for a European university consortium to build a web platform for data visualization and comparison tools based on the different KPIs of the consortium's university administrations.",
@@ -77,7 +77,7 @@ const Experience = () => {
         <div className="mt-12">
           <a
             className="inline-flex items-baseline font-medium leading-tight text-primary hover:text-accent focus-visible:text-accent font-semibold text-primary group/link text-base"
-            href="/resume.pdf"
+            href="/resume_ibrahimadlani.pdf"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="View Full Résumé (opens in a new tab)"
