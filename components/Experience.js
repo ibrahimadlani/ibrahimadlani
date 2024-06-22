@@ -77,7 +77,7 @@ const Experience = () => {
         <div className="mt-12">
           <a
             className="inline-flex items-baseline font-medium leading-tight text-primary hover:text-accent focus-visible:text-accent font-semibold text-primary group/link text-base"
-            href="/resume_ibrahimadlani.pdf"
+            href="/resume.pdf"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="View Full Résumé (opens in a new tab)"
