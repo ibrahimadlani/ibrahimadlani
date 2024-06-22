@@ -36,7 +36,7 @@ const Experience = () => {
     {
       date: "Jun 21' — Aug 23'",
       role: "Software Engineer, Intern",
-      type: 'Lille, France',
+      type: 'Valenciennes, France',
       company: "UPHF",
       companyUrl: "https://www.uphf.fr/",
       description: "Worked with a team of two engineering student for a European university consortium to build a web platform for data visualization and comparison tools based on the different KPIs of the consortium's university administrations.",
