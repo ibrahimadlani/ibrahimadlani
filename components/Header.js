@@ -18,10 +18,10 @@ const Header = () => {
         <Headshot />
 
         {/* Name and Title */}
-        <h1 className="text-4xl font-bold tracking-tight text-[#302020] sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
           <a href="/">Ibrahim Adlani</a>
         </h1>
-        <h2 className="mt-3 text-lg font-medium tracking-tight sm:text-xl text-[#302020]">
+        <h2 className="mt-3 text-lg font-medium tracking-tight sm:text-xl text-primary">
           Junior Software Engineer
         </h2>
 

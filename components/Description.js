@@ -9,8 +9,6 @@ import Link from "next/link";
  * @returns {JSX.Element} The Description component.
  */
 const Description = () => {
-  const korokCharacters = ["A", "n", "o", "u", "a", "r"];
-  const korokColors = ["red", "orange", "yellow", "green", "sky", "violet"];
 
   return (
     <section
@@ -19,7 +17,7 @@ const Description = () => {
       aria-label="About me"
     >
       <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-[#302020] lg:sr-only">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-primary lg:sr-only">
           About
         </h2>
       </div>
@@ -27,7 +25,7 @@ const Description = () => {
         <p className="mb-4">
           Back in 2012, when I was just 12 years old, my brother{" "}
           <Link href={"https://anouar.adlani.com/"}>
-            <KorokEffect characters={korokCharacters} colors={korokColors} />
+            <KorokEffect />
           </Link>{" "}
           introduced me to the world of coding with HTML and CSS. That initial
           spark ignited a passion for programming and web development that has

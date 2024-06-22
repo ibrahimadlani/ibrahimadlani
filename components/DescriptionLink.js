@@ -11,7 +11,7 @@
 const DescriptionLink = ({ href, ariaLabel, children }) => {
   return (
     <a
-      className="font-medium text-[#302020] hover:underline focus-visible:text-teal-300"
+      className="font-medium text-primary hover:text-accent transition focus-visible:text-accent"
       href={href}
       target="_blank"
       rel="noreferrer noopener"

@@ -1,5 +1,8 @@
+import CalendarIcon from './icons/CalendarIcon';
 import GitHubIcon from './icons/GitHubIcon';
 import LinkedInIcon from './icons/LinkedInIcon';
+import MailIcon from './icons/MailIcon';
+import PhoneIcon from './icons/PhoneIcon';
 
 /**
  * Socials component for displaying social media links.
@@ -21,6 +24,18 @@ const socialLinks = [
     ariaLabel: "LinkedIn (opens in a new tab)",
     title: "LinkedIn",
     icon: <LinkedInIcon />,
+  },
+  {
+    href: "tel:+33695670877",
+    ariaLabel: "Phone (opens in a tooltip and copy to clipboard)",
+    title: "Phone",
+    icon: <PhoneIcon />,
+  },
+  {
+    href: "mailto:ibrahim@adlani.com",
+    ariaLabel: "Mail (opens in a tooltip and copy to clipboard)",
+    title: "Mail",
+    icon: <MailIcon />,
   }
 ];
 
@@ -30,7 +45,7 @@ const Socials = () => {
       {socialLinks.map((link, index) => (
         <li key={index} className="mr-5 text-xs shrink-0">
           <a
-            className="block hover:text-[#302020]"
+            className="block hover:text-primary"
             href={link.href}
             target="_blank"
             rel="noreferrer noopener"

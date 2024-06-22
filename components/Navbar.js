@@ -1,3 +1,4 @@
+import React from 'react';
 import NavbarItem from './NavbarItem';
 
 /**
@@ -11,14 +12,19 @@ import NavbarItem from './NavbarItem';
 
 const Navbar = () => {
   const navItems = [
-    { href: "#about", label: "About" }
+    { href: "#about", label: "About" },
+    { href: "#experience", label: "Experience" }
   ];
 
   return (
     <nav className="nav hidden lg:block" aria-label="In-page jump links">
       <ul className="mt-16 w-max">
         {navItems.map((item, index) => (
-          <NavbarItem key={index} href={item.href} label={item.label} />
+          <NavbarItem
+            key={index}
+            href={item.href}
+            label={item.label}
+          />
         ))}
       </ul>
     </nav>
