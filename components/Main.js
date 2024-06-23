@@ -1,4 +1,6 @@
+import Certifications from "./Certifications";
 import Description from "./Description";
+import Education from "./Education";
 import Experience from "./Experience";
 import Projects from "./Projects";
 
@@ -15,7 +17,10 @@ const Main = () => {
       <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
         <Description />
         <Experience />
+        <Education />
         <Projects />
+        <Certifications />
+        
       </main>
     );
   };

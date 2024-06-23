@@ -11,7 +11,11 @@ const Experience = () => {
       type: 'Leuven, Belgium',
       company: "Septentrio",
       companyUrl: "https://septentrio.com",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur arcu ullamcorper, pretium dolor egestas, gravida turpis. Nulla pretium, leo non blandit ullamcorper, nibh lectus ornare dui, et lobortis ante nibh non eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus dolor eros, non faucibus ex tincidunt ut. Nunc in malesuada libero, sit amet porttitor ex.",
+      descriptions: [
+        "Currently interning as a Software Engineer, developing tools to assist hardware engineers in their tasks.",
+        "My responsibilities include creating file encryption tools, calculation and conversion tools for position and time formats, and enabling interaction with data center machines.",
+        "The tools are developed using Python and Django, streamlining and enhancing the efficiency of engineering processes."
+      ],
       technologies: ["Python", "Django", "Jenkins", "MatLab"]
     },
     {
@@ -20,7 +24,11 @@ const Experience = () => {
       type: 'Paris, France',
       company: "Deezer",
       companyUrl: "https://deezer.com",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur arcu ullamcorper, pretium dolor egestas, gravida turpis. Nulla pretium, leo non blandit ullamcorper, nibh lectus ornare dui, et lobortis ante nibh non eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus dolor eros, non faucibus ex tincidunt ut. Nunc in malesuada libero, sit amet porttitor ex.",
+      descriptions: [
+        "As a Software Engineer in the Quality Assurance department, I collaborated with an agile team to develop a web application using Django and React.",
+        "I contributed to the RESTful API and UX design, and specialized in QA testing technologies such as Appium and Selenium.",
+        "As the front-end reference, I showcased my expertise in front-end development and design, ensuring high code quality and adherence to agile methodologies."
+      ],
       technologies: ["Python", "Django", "HTML & CSS", "Bootstrap 5", "JavaScript", "Jenkins", "Docker"]
     },
     {
@@ -29,18 +37,48 @@ const Experience = () => {
       type: 'Lille, France',
       company: "IBM",
       companyUrl: "https://www.ibm.com/",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur arcu ullamcorper, pretium dolor egestas, gravida turpis. Nulla pretium, leo non blandit ullamcorper, nibh lectus ornare dui, et lobortis ante nibh non eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus dolor eros, non faucibus ex tincidunt ut. Nunc in malesuada libero, sit amet porttitor ex.",
+      descriptions: [
+        "As a Software Engineer in the Security Operational Center, I developed Python modules for IBM SOAR software.",
+        "I collaborated with a team of security software engineers, adhering to agile methodologies and Python PEP8 coding standards.",
+        "I independently created scripts to automate workflow diagram schematization, significantly improving the team's efficiency.",
+        "This role provided valuable exposure to applicative cybersecurity and advanced Python development."
+      ],
       technologies: ["Python", "Shell", "QRadar", "IBM SOAR"]
-    }
-    ,
+    },
     {
       date: "Jun 21' — Aug 21'",
       role: "Software Engineer, Intern",
       type: 'Valenciennes, France',
       company: "UPHF",
       companyUrl: "https://www.uphf.fr/",
-      description: "Worked with a team of two engineering student for a European university consortium to build a web platform for data visualization and comparison tools based on the different KPIs of the consortium's university administrations.",
+      descriptions: [
+        "Worked with a team of two engineering student for a European university consortium to build a web platform for data visualization and comparison tools based on the different KPIs of the consortium's university administrations."
+      ],
       technologies: ["PostgreSQL", "Shell", "PHP", "Sass"]
+    },
+    {
+      date: "Apr 21' — Jun 21'",
+      role: "Software Engineer, Intern",
+      type: 'Charleville-Mézières, France',
+      company: "CD08",
+      companyUrl: "https://www.cd08.fr/",
+      descriptions: [
+        "As part of my end-of-studies internship, I developed an autonomous PHP interface between the Ministry of National Education's API and the department's ticketing system.",
+        "This centralized technical issues for direct technician response and automated the parsing of SMTP emails with XML to enrich the GLPI database, delivering a high-quality code product ahead of schedule."
+      ],
+      technologies: ["PHP", "Shell", "PostgreSQL"]
+    },
+    {
+      date: "Sep 20' — Apr 21'",
+      role: "Software Engineer, Apprentice",
+      type: 'Reims, France',
+      company: "Enedis",
+      companyUrl: "https://www.enedis.fr/",
+      descriptions: [
+        "As a Software Engineer apprentice, I developed a data visualization application using Vanilla JavaScript, Chart.js, and PHP.",
+        "This tool enabled Enedis Reims managers to better forecast end-of-year directives and manage finances and manpower more effectively, improving overall resource planning and decision-making."
+      ],
+      technologies: ["PostgreSQL", "Shell", "PHP", "Laravel"]
     }
   ];
 
@@ -52,8 +90,8 @@ const Experience = () => {
       aria-label="Work experience"
     >
       {/* Sticky header for the section on small screens */}
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-primary lg:sr-only">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-primary ">
           Experience
         </h2>
       </div>
@@ -67,7 +105,7 @@ const Experience = () => {
               type={experience.type}
               company={experience.company}
               companyUrl={experience.companyUrl}
-              description={experience.description}
+              descriptions={experience.descriptions}
               technologies={experience.technologies}
             />
           ))}
