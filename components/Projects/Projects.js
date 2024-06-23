@@ -1,6 +1,6 @@
 
 import React from 'react';
-import thumbnail from "../app/images/thumbnail.png";
+import thumbnail from "../../app/images/thumbnail.png";
 import ProjectsItem from './ProjectsItem';
 
 const projects = [

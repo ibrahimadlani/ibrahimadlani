@@ -1,7 +1,7 @@
-import GitHubIcon from './icons/GitHubIcon';
-import LinkedInIcon from './icons/LinkedInIcon';
-import MailIcon from './icons/MailIcon';
-import PhoneIcon from './icons/PhoneIcon';
+import GitHubIcon from '../icons/GitHubIcon';
+import LinkedInIcon from '../icons/LinkedInIcon';
+import MailIcon from '../icons/MailIcon';
+import PhoneIcon from '../icons/PhoneIcon';
 
 /**
  * Socials component for displaying social media links.

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Header from "../components/Header";
-import Main from "../components/Main";
+import Header from "../components/Panel/Header";
+import Main from "../components/Panel/Main";
 
 /**
  * Home component for the homepage layout.

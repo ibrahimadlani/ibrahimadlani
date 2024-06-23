@@ -8,7 +8,7 @@
  * @returns {JSX.Element} The Link component.
  */
 
-const DescriptionLink = ({ href, ariaLabel, children }) => {
+const AboutLink = ({ href, ariaLabel, children }) => {
   return (
     <a
       className="font-medium text-primary hover:text-accent transition focus-visible:text-accent"
@@ -22,4 +22,4 @@ const DescriptionLink = ({ href, ariaLabel, children }) => {
   );
 };
 
-export default DescriptionLink;
+export default AboutLink;

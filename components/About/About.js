@@ -1,14 +1,14 @@
-import DescriptionLink from "./DescriptionLink";
+import AboutLink from "./AboutLink";
 import KorokEffect from "./KorokEffect";
 import Link from "next/link";
 
 /**
- * Description component for the "About me" section.
+ * About component for the "About me" section.
  * This component provides a brief introduction and background, with links to various external resources.
  *
- * @returns {JSX.Element} The Description component.
+ * @returns {JSX.Element} The About component.
  */
-const Description = () => {
+const About = () => {
 
   return (
     <section
@@ -29,26 +29,26 @@ const Description = () => {
           spark ignited a passion for programming and web development that has
           only grown over the years. Fast-forward to today, and I’ve had the
           privilege of building software solutions for{" "}
-          <DescriptionLink
+          <AboutLink
             href="https://deezer.com/"
             ariaLabel="advertising agency (opens in a new tab)"
           >
             Deezer
-          </DescriptionLink>
+          </AboutLink>
           ,{" "}
-          <DescriptionLink
+          <AboutLink
             href="https://ibm.com/"
             ariaLabel="advertising agency (opens in a new tab)"
           >
             IBM
-          </DescriptionLink>
+          </AboutLink>
           , and{" "}
-          <DescriptionLink
+          <AboutLink
             href="https://enedis.fr/"
             ariaLabel="advertising agency (opens in a new tab)"
           >
             Enedis
-          </DescriptionLink>
+          </AboutLink>
           .
         </p>
         <p className="mb-4">
@@ -71,4 +71,4 @@ const Description = () => {
   );
 };
 
-export default Description;
+export default About;
