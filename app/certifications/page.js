@@ -9,6 +9,42 @@ import Head from "next/head";
  */
 
 export const Home = () => {
+
+  const certifications = [
+    {
+      year: 2023,
+      project: " Cyber Security Operations and Technology Solutions",
+      madeAt: "IBM",
+      builtWith: ["CyberSec", "Cloud"],
+      link: "https://ibm-learning.udemy.com/certificate/UC-550b9f69-f7e3-4d14-9ffb-f9a6d6d813d7/",
+      label: "Certification"
+    },
+    {
+      year: 2021,
+      project: "Data Visualization",
+      madeAt: "freeCodeCamp",
+      builtWith: ["JavaScript", "Statistical Anlaysis", "D3.js"],
+      link: "https://freecodecamp.org/certification/ibrahimadlani/data-visualization",
+      label: "Certification"
+    },
+    {
+      year: 2021,
+      project: "JavaScript Algorithms and Data Structures",
+      madeAt: "freeCodeCamp",
+      builtWith: ["JavaScript", "HTML/CSS", "DOM"],
+      link: "https://freecodecamp.org/certification/ibrahimadlani/javascript-algorithms-and-data-structures",
+      label: "Certification"
+    },
+    {
+      year: 2021,
+      project: "Scientific Computing with Python",
+      madeAt: "freeCodeCamp",
+      builtWith: ["Python", "Algorithms", "Data Structures"],
+      link: "https://freecodecamp.org/certification/ibrahimadlani/javascript-algorithms-and-data-structures",
+      label: "Certification"
+    }
+  ]
+
   // Meta information for the Head component
   const metaTags = {
     title: "Ibrahim Adlani - Software Engineer",
@@ -60,7 +96,7 @@ export const Home = () => {
           Ibrahim Adlani
         </a>
         <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-          All Projects
+          All Certifications
         </h1>
         <table id="content" className="mt-12 w-full border-collapse text-left">
           <thead className="sticky top-0 z-10 border-b border-muted/10 bg-background/75 px-6 py-5 backdrop-blur">
@@ -83,22 +119,7 @@ export const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {[
-              {
-                year: 2023,
-                project: "Emerson Collective",
-                madeAt: "Upstatement",
-                builtWith: ["Next.js", "TypeScript", "SCSS", "Contentful"],
-                link: "https://www.emersoncollective.com/"
-              },
-              {
-                year: 2023,
-                project: "Harvard Business School Next.js Site",
-                madeAt: "Upstatement",
-                builtWith: ["React", "TypeScript", "Next.js", "Contentful"],
-                link: "https://www.hbs.edu/"
-              }
-            ].map((item, index) => (
+            {certifications.map((item, index) => (
               <tr key={index} className="border-b border-muted/10 last:border-none">
                 <td className="py-4 pr-4 align-top text-sm">
                   <div className="translate-y-px">{item.year}</div>
@@ -165,7 +186,7 @@ export const Home = () => {
                       >
                         <span>
                           <span className="inline-block">
-                            {item.link}
+                            {item.label}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 20 20"
