@@ -21,7 +21,7 @@ const Education = () => {
         company: "Cergy, France",
         companyUrl: "https://cytech.cyu.fr/",
         description: "Completed courses in C Programming, Web Development, Unix Commands, Advanced Databases Programming, Computer Architecture, Analysis and JAVA Object-Oriented Programming, Operating Systems, Linear Optimisations, Advanced Procedural Algorithms, and Statistics.",
-        technologies: ["GPA 3.5", "Software", "Infrastructure", "IA"]
+        technologies: ["GPA 3.5", "Software", "Infrastructure", "AI"]
       },
     {
       date: "Sep 19' — Aug 21'",

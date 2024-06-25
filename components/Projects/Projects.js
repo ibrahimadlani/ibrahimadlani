@@ -2,6 +2,8 @@
 import React from 'react';
 import thumbnail from "../../app/images/thumbnail.png";
 import ProjectsItem from './ProjectsItem';
+import lepetitframework_thumbnail from "../../app/images/lepetitframework_thumbnail.png";
+import projetm3202c_thumbnail from "../../app/images/projetm3202c_thumbnail.png";
 
 const projects = [
   {
@@ -11,6 +13,23 @@ const projects = [
     technologies: ["NextJS", "JavaScript", "TailwindCSS", "AWS Amplify"],
     imageSrc: thumbnail,
     imageAlt: "Build a Spotify Connected App Newline course marketing card"
+  },
+  {
+    title: "LePetitFramework",
+    url: "https://github.com/ibrahimadlani/LePetitFramework",
+    description: "Very light weight PHP framework with adaptive database controller",
+    technologies: ["PHP", "Bootstrap 4", "OOP"],
+    imageSrc: lepetitframework_thumbnail,
+    imageAlt: "LePetitFramewsork logo"
+  }
+  ,
+  {
+    title: "ProjectM3202c",
+    url: "https://github.com/ibrahimadlani/ProjectM3202c",
+    description: "Mathematical model solver for Malthus, Verhulst and Lotka-Volterra models.",
+    technologies: ["PHP", "Python", "JavaScript"],
+    imageSrc: projetm3202c_thumbnail,
+    imageAlt: "ProjectM3202c logo"
   }
 ];
 

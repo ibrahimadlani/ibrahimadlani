@@ -7,7 +7,7 @@
  * @returns {JSX.Element} The KorokEffect component.
  */
 const KorokEffect = ({ characters, colors }) => (
-  <span className="group/korok inline-flex lg:cursor-[url('../../app/images/cursor_monkey.png'),_pointer] lg:font-medium lg:text-primary">
+  <span className="group/korok inline-flex lg:cursor-[url('../../app/images/cursor_monkey.png'),_pointer] font-medium text-primary">
     <span className="sr-only">Anouar</span>
     <span
       className="group-hover/korok:text-red-400 transition duration-75 group-hover/korok:-translate-y-px delay-[50ms]"
