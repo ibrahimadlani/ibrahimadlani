@@ -8,7 +8,6 @@ const CertificationsItem = ({ date, title, company, certificationUrl, imageAlt, 
         <Image
           alt={imageAlt}
           src={image}
-          layout="intrinsic"
           width={200}
           className="z-10 col-span-2 rounded border-2 border-primary/10 transition group-hover:border-primary/30 sm:col-span-2"
         />

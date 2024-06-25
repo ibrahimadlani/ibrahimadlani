@@ -43,7 +43,6 @@ const ProjectsItem = ({ title, url, description, technologies, imageSrc, imageAl
           <Image
             alt={imageAlt}
             src={imageSrc}
-            layout="intrinsic"
             width={200}
             height={48}
             className="rounded border-2 border-primary/10 transition group-hover:border-primary/30 sm:order-1 sm:col-span-2 sm:translate-y-1"
