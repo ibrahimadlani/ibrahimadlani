@@ -2,6 +2,12 @@ import CertificationsItem from "./CertificationsItem";
 import ibm_logo from "../../app/images/companies/ibm.svg";
 import freecodecamp_logo from "../../app/images/companies/freecodecamp.svg";
 
+/**
+ * Certifications component to display a list of certifications.
+ *
+ * @returns {JSX.Element} The Certifications component.
+ */
+
 const certificationsData = [
   {
     title: "Cyber Sec. Operations and Tech. Solutions",
@@ -44,8 +50,9 @@ const Certifications = () => {
       className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       aria-label="Work experience"
     >
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-primary">
+      {/* Sticky header for the section on small screens */}
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">
           Certifications
         </h2>
       </div>
@@ -57,7 +64,7 @@ const Certifications = () => {
         </ol>
         <div className="mt-12">
           <a
-            className="inline-flex items-baseline font-medium leading-tight text-primary hover:text-accent focus-visible:text-accent font-semibold text-primary group/link text-base"
+            className="inline-flex items-baseline font-medium leading-tight text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-accent dark:focus-visible:text-accent font-semibold text-primary group/link text-base"
             href="/certifications"
             rel="noreferrer noopener"
             aria-label="View Full Résumé (opens in a new tab)"

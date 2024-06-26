@@ -8,19 +8,19 @@ import Link from "next/link";
  *
  * @returns {JSX.Element} The About component.
  */
-const About = () => {
 
+const About = () => {
   return (
     <section
       id="about"
       className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       aria-label="About me"
     >
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
-      <h2 className="text-sm font-bold uppercase tracking-widest text-primary ">About</h2>
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">About</h2>
       </div>
       <div>
-        <p className="mb-4">
+        <p className="mb-4 text-secondary dark:text-darkSecondary">
           Back in 2012, when I was just 12 years old, my brother{" "}
           <Link href={"https://anouar.adlani.com/"}>
             <KorokEffect />
@@ -51,7 +51,7 @@ const About = () => {
           </AboutLink>
           .
         </p>
-        <p className="mb-4">
+        <p className="mb-4 text-secondary dark:text-darkSecondary">
           My main focus these days is developing robust, secure, and
           user-friendly software applications. I thrive in the intersection of
           design and technology, ensuring that my creations are not only
@@ -60,7 +60,7 @@ const About = () => {
           created scripts to automate and streamline workflows, significantly
           enhancing team productivity.
         </p>
-        <p>
+        <p className="text-secondary dark:text-darkSecondary">
           When I’m not coding, you can find me exploring new hiking trails,
           indulging in a good book, or experimenting with new recipes in the
           kitchen. Whether at work or at play, I’m always looking for new

@@ -7,7 +7,7 @@ import Socials from "./Socials";
  * This component contains the headshot, name, title, bio, navigation bar, and social links.
  * It is styled to be sticky on large screens and includes responsive design elements.
  *
- *@returns {JSX.Element} The Header component.
+ * @returns {JSX.Element} The Header component.
  */
 
 const Header = () => {
@@ -18,15 +18,15 @@ const Header = () => {
         <Headshot />
 
         {/* Name and Title */}
-        <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tight text-primary dark:text-darkPrimary sm:text-5xl">
           <a href="/">Ibrahim Adlani</a>
         </h1>
-        <h2 className="mt-3 text-lg font-medium tracking-tight sm:text-xl text-primary">
+        <h2 className="mt-3 text-lg font-medium tracking-tight text-primary dark:text-darkPrimary sm:text-xl">
           Junior Software Engineer
         </h2>
 
         {/* Bio */}
-        <p className="mt-4 max-w-xs leading-normal">
+        <p className="mt-4 max-w-xs leading-normal text-secondary dark:text-darkSecondary">
           I build dynamic full-stack web applications with a focus on
           performance.
         </p>

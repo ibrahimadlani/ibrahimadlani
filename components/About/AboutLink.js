@@ -11,7 +11,7 @@
 const AboutLink = ({ href, ariaLabel, children }) => {
   return (
     <a
-      className="font-medium text-primary hover:text-accent transition focus-visible:text-accent"
+      className="font-medium text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent transition focus-visible:text-accent dark:focus-visible:text-accent"
       href={href}
       target="_blank"
       rel="noreferrer noopener"

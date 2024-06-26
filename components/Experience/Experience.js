@@ -1,7 +1,13 @@
 import React from 'react';
 import ExperienceItem from './ExperienceItem';
 
-// Main Experience component
+/**
+ * Main Experience component
+ * This component renders a list of work experiences, each as an ExperienceItem.
+ *
+ * @returns {JSX.Element} The Experience component.
+ */
+
 const Experience = () => {
   // Array to store experience information
   const experiences = [
@@ -71,7 +77,6 @@ const Experience = () => {
         "Create a script to automatically parse incoming XML files from an automated emailing system. ",
         "Architected multiple MySQL databases to store properly all the parsed elements.",
         "Developed a JS single-page application to track the inventory shifts for the department laboratory.",
-
       ],
       technologies: ["PHP", "GLPI", "SMTP", "Shell", "PostgreSQL"]
     },
@@ -99,8 +104,8 @@ const Experience = () => {
       aria-label="Work experience"
     >
       {/* Sticky header for the section on small screens */}
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-primary ">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">
           Experience
         </h2>
       </div>
@@ -123,7 +128,7 @@ const Experience = () => {
         {/* Link to the full resume */}
         <div className="mt-12">
           <a
-            className="inline-flex items-baseline font-medium leading-tight text-primary hover:text-accent focus-visible:text-accent font-semibold text-primary group/link text-base"
+            className="inline-flex items-baseline font-medium leading-tight text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-accent dark:focus-visible:text-accent font-semibold text-primary group/link text-base"
             href="/resume.pdf"
             target="_blank"
             rel="noreferrer noopener"

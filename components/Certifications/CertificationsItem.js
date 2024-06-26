@@ -1,21 +1,34 @@
 import Image from "next/image";
 
+/**
+ * CertificationsItem component for displaying an individual certification.
+ * 
+ * @param {Object} props - The properties object.
+ * @param {string} props.date - The date of the certification.
+ * @param {string} props.title - The title of the certification.
+ * @param {string} props.company - The company issuing the certification.
+ * @param {string} props.certificationUrl - The URL to the certification details.
+ * @param {string} props.imageAlt - The alt text for the company logo image.
+ * @param {string} props.image - The source URL for the company logo image.
+ * @returns {JSX.Element} The CertificationsItem component.
+ */
+
 const CertificationsItem = ({ date, title, company, certificationUrl, imageAlt, image }) => {
   return (
     <li className="mb-12">
       <div className="group relative grid grid-cols-8 gap-4 transition-all sm:items-center sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5 dark:lg:group-hover:bg-darkMuted/5 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
         <Image
           alt={imageAlt}
           src={image}
           width={200}
-          className="z-10 col-span-2 rounded border-2 border-primary/10 transition group-hover:border-primary/30 sm:col-span-2"
+          className="z-10 col-span-2 rounded border-2 border-primary/10 dark:border-darkPrimary/10 transition group-hover:border-primary/30 dark:group-hover:border-darkPrimary/30 sm:col-span-2"
         />
         <div className="z-10 col-span-6">
-          <p className="-mt-1 text-sm font-semibold leading-6">{date}</p>
+          <p className="-mt-1 text-sm font-semibold leading-6 text-primary dark:text-darkPrimary">{date}</p>
           <h3 className="-mt-1 font-medium">
             <a
-              className="inline-flex items-baseline font-medium leading-tight text-primary hover:text-accent focus-visible:text-teal-300 group/link text-base"
+              className="inline-flex items-baseline font-medium leading-tight text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-teal-300 dark:focus-visible:text-accent group/link text-base"
               href={certificationUrl}
               target="_blank"
               rel="noreferrer noopener"
@@ -42,7 +55,7 @@ const CertificationsItem = ({ date, title, company, certificationUrl, imageAlt, 
               </span>
             </a>
             <div>
-              <div className="text-muted" aria-hidden="true">
+              <div className="text-muted dark:text-darkMuted" aria-hidden="true">
                 {company}
               </div>
             </div>

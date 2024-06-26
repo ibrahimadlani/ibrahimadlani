@@ -1,7 +1,12 @@
 import React from 'react';
 import EducationItem from './EducationItem';
 
-// Main Education component
+/**
+ * Main Education component
+ * This component renders a list of educational experiences, each as an EducationItem.
+ *
+ * @returns {JSX.Element} The Education component.
+ */
 const Education = () => {
   // Array to store experience information
   const experiences = [
@@ -15,14 +20,14 @@ const Education = () => {
       technologies: ["GPA 3.5", "Software", "Infrastructure", "Cybersecurity"]
     },
     {
-        date: "Sep 21' — Aug 22'",
-        role: "Bachelor of Engineering, Computer Sciences",
-        type: 'CY Tech',
-        company: "Cergy, France",
-        companyUrl: "https://cytech.cyu.fr/",
-        description: "Completed courses in C Programming, Web Development, Unix Commands, Advanced Databases Programming, Computer Architecture, Analysis and JAVA Object-Oriented Programming, Operating Systems, Linear Optimisations, Advanced Procedural Algorithms, and Statistics.",
-        technologies: ["GPA 3.5", "Software", "Infrastructure", "AI"]
-      },
+      date: "Sep 21' — Aug 22'",
+      role: "Bachelor of Engineering, Computer Sciences",
+      type: 'CY Tech',
+      company: "Cergy, France",
+      companyUrl: "https://cytech.cyu.fr/",
+      description: "Completed courses in C Programming, Web Development, Unix Commands, Advanced Databases Programming, Computer Architecture, Analysis and JAVA Object-Oriented Programming, Operating Systems, Linear Optimisations, Advanced Procedural Algorithms, and Statistics.",
+      technologies: ["GPA 3.5", "Software", "Infrastructure", "AI"]
+    },
     {
       date: "Sep 19' — Aug 21'",
       role: "Associate Degree, Computer Sciences",
@@ -35,15 +40,15 @@ const Education = () => {
   ];
 
   return (
-    // Main section for work experience
+    // Main section for education experience
     <section
       id="education"
       className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       aria-label="Work experience"
     >
       {/* Sticky header for the section on small screens */}
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-primary ">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">
           Education
         </h2>
       </div>
@@ -66,7 +71,7 @@ const Education = () => {
         {/* Link to the full resume */}
         <div className="mt-12">
           <a
-            className="inline-flex items-baseline font-medium leading-tight text-primary hover:text-accent focus-visible:text-accent font-semibold text-primary group/link text-base"
+            className="inline-flex items-baseline font-medium leading-tight text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-accent dark:focus-visible:text-accent font-semibold text-primary group/link text-base"
             href="/resume.pdf"
             target="_blank"
             rel="noreferrer noopener"

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',  // Active le mode sombre basé sur la classe 'dark'
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,17 +9,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: '#f97316',  // Accent color
-        primary: '#302020',  // Primary text color
-        secondary: '#837979',  // Secondary text color
-        muted: '#837979',  // Muted text color
-        info: '#C4CFDD',  // Info text color
-        background: '#fff',  // Background color
+        accent: '#f97316',  // Couleur d'accentuation
+        primary: '#302020',  // Couleur principale du texte
+        secondary: '#837979',  // Couleur secondaire du texte
+        muted: '#837979',  // Couleur de texte atténuée
+        info: '#C4CFDD',  // Couleur d'information du texte
+        background: '#fff',  // Couleur de fond
+
+        // Couleurs pour le mode sombre
+        darkBackground: '#0f172a',
+        darkPrimary: '#e2e8f0',
+        darkSecondary: '#94a3b8',
+        darkMuted: '#64748b',
+        darkInfo: '#9ca3af',
       },
     },
   },
   plugins: [],
 };
-
-
-
