@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import useDarkMode from "../../hooks/useDarkMode";
 
 /**
  * CertificationsItem component for displaying an individual certification.
@@ -9,20 +11,37 @@ import Image from "next/image";
  * @param {string} props.company - The company issuing the certification.
  * @param {string} props.certificationUrl - The URL to the certification details.
  * @param {string} props.imageAlt - The alt text for the company logo image.
- * @param {string} props.image - The source URL for the company logo image.
+ * @param {Object} props.image - The source URLs for the company logo images.
+ * @param {string} props.image.light - The source URL for the light mode image.
+ * @param {string} props.image.dark - The source URL for the dark mode image.
  * @returns {JSX.Element} The CertificationsItem component.
  */
-
 const CertificationsItem = ({ date, title, company, certificationUrl, imageAlt, image }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    console.log("Theme from localStorage:", theme); // Log the theme value
+    setIsDarkMode(theme === "dark");
+  }, []);
+
   return (
     <li className="mb-12">
       <div className="group relative grid grid-cols-8 gap-4 transition-all sm:items-center sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/5 dark:lg:group-hover:bg-darkMuted/5 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
         <Image
           alt={imageAlt}
-          src={image}
+          src={image.light}
           width={200}
-          className="z-10 col-span-2 rounded border-2 border-primary/10 dark:border-darkPrimary/10 transition group-hover:border-primary/30 dark:group-hover:border-darkPrimary/30 sm:col-span-2"
+          height={200}
+          className="dark:hidden z-10 col-span-2 rounded border-2 border-primary/10 dark:border-darkPrimary/10 transition group-hover:border-primary/30 dark:group-hover:border-darkPrimary/30 sm:col-span-2"
+        />
+        <Image
+          alt={imageAlt}
+          src={image.dark}
+          width={200}
+          height={200}
+          className="dark:block hidden z-10 col-span-2 rounded border-2 border-primary/10 dark:border-darkPrimary/10 transition group-hover:border-primary/30 dark:group-hover:border-darkPrimary/30 sm:col-span-2"
         />
         <div className="z-10 col-span-6">
           <p className="-mt-1 text-sm font-semibold leading-6 text-primary dark:text-darkPrimary">{date}</p>

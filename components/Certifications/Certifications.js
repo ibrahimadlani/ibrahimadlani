@@ -1,6 +1,8 @@
 import CertificationsItem from "./CertificationsItem";
 import ibm_logo from "../../app/images/companies/ibm.svg";
+import imb_dark_logo from "../../app/images/companies/ibm_dark.svg";
 import freecodecamp_logo from "../../app/images/companies/freecodecamp.svg";
+import freecodecamp_logo_dark_logo from "../../app/images/companies/fcc_dark.svg";
 
 /**
  * Certifications component to display a list of certifications.
@@ -15,7 +17,10 @@ const certificationsData = [
     company: "IBM",
     certificationUrl: "https://ibm-learning.udemy.com/certificate/UC-550b9f69-f7e3-4d14-9ffb-f9a6d6d813d7/",
     imageAlt: "IBM logo",
-    image: ibm_logo,
+    image: {
+      light: ibm_logo,
+      dark: imb_dark_logo
+    }
   },
   {
     title: "Data Visualization",
@@ -23,7 +28,10 @@ const certificationsData = [
     company: "freeCodeCamp",
     certificationUrl: "https://freecodecamp.org/certification/ibrahimadlani/data-visualization",
     imageAlt: "freeCodeCamp logo",
-    image: freecodecamp_logo,
+    image: {
+      light: freecodecamp_logo,
+      dark: freecodecamp_logo_dark_logo
+    }
   },
   {
     title: "JavaScript Algorithms and Data Structures",
@@ -31,7 +39,10 @@ const certificationsData = [
     company: "freeCodeCamp",
     certificationUrl: "https://freecodecamp.org/certification/ibrahimadlani/javascript-algorithms-and-data-structures",
     imageAlt: "freeCodeCamp logo",
-    image: freecodecamp_logo,
+    image: {
+      light: freecodecamp_logo,
+      dark: freecodecamp_logo_dark_logo
+    }
   },
   {
     title: "Scientific Computing with Python",
@@ -39,7 +50,10 @@ const certificationsData = [
     company: "freeCodeCamp",
     certificationUrl: "https://freecodecamp.org/certification/ibrahimadlani/javascript-algorithms-and-data-structures",
     imageAlt: "freeCodeCamp logo",
-    image: freecodecamp_logo,
+    image: {
+      light: freecodecamp_logo,
+      dark: freecodecamp_logo_dark_logo
+    }
   }
 ];
 

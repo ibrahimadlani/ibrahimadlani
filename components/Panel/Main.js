@@ -3,6 +3,7 @@ import About from "../About/About";
 import Education from "../Education/Education";
 import Experience from "../Experience/Experience";
 import Projects from "../Projects/Projects";
+import Footer from "../Footer/Footer";
 
 /**
  * Main component for the main content area of the webpage.
@@ -20,6 +21,7 @@ const Main = () => {
         <Education />
         <Projects />
         <Certifications />
+        <Footer />
         
       </main>
     );
