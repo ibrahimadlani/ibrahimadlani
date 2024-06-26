@@ -12,9 +12,17 @@ import React from 'react';
 
 const NavbarItem = ({ href, label, isActive }) => (
   <li>
-    <a className={`group flex items-center py-3 ${isActive ? 'active' : ''}`} href={href}>
-      <span className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-primary group-focus-visible:w-16 group-focus-visible:bg-primary motion-reduce:transition-none ${isActive ? 'bg-primary w-16' : ''}`}></span>
-      <span className={`nav-text text-xs font-bold uppercase tracking-widest text-muted group-hover:text-primary group-focus-visible:text-primary ${isActive ? 'text-primary' : ''}`}>
+    <a className={`group flex items-center py-3`} href={href}>
+      <span
+        className={`nav-indicator mr-4 h-px transition-all bg-muted group-hover:w-16 group-hover:bg-primary group-focus-visible:w-16 group-focus-visible:bg-primary motion-reduce:transition-none ${
+          isActive ? 'w-16 bg-primary' : 'w-8'
+        }`}
+      ></span>
+      <span
+        className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors text-muted group-hover:text-primary group-focus-visible:text-primary ${
+          isActive ? 'text-primary' : ''
+        }`}
+      >
         {label}
       </span>
     </a>

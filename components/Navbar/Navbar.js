@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import NavbarItem from './NavbarItem';
 
 /**
@@ -11,6 +13,8 @@ import NavbarItem from './NavbarItem';
  */
 
 const Navbar = () => {
+  const [activeSection, setActiveSection] = useState('#about');
+  
   const navItems = [
     { href: "#about", label: "About" },
     { href: "#experience", label: "Experience" },
@@ -18,6 +22,38 @@ const Navbar = () => {
     { href: "#projects", label: "Projects" },
     { href: "#certifications", label: "Certifications" },
   ];
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    const sectionOffsets = navItems.map(item => {
+      const element = document.querySelector(item.href);
+      return {
+        href: item.href,
+        offsetTop: element.offsetTop,
+      };
+    });
+
+    const currentSection = sectionOffsets.find((section, index) => {
+      const nextSection = sectionOffsets[index + 1];
+      if (nextSection) {
+        return scrollPosition >= section.offsetTop && scrollPosition < nextSection.offsetTop;
+      } else {
+        return scrollPosition >= section.offsetTop;
+      }
+    });
+
+    if (currentSection) {
+      setActiveSection(currentSection.href);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <nav className="nav hidden lg:block" aria-label="In-page jump links">
@@ -27,6 +63,7 @@ const Navbar = () => {
             key={index}
             href={item.href}
             label={item.label}
+            isActive={activeSection === item.href}
           />
         ))}
       </ul>

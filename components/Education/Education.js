@@ -28,7 +28,7 @@ const Education = () => {
       role: "Associate Degree, Computer Sciences",
       type: 'Université Polytechnique Hauts-de-France',
       company: "Maubeuge, France",
-      companyUrl: "https://uphf.com",
+      companyUrl: "https://uphf.fr",
       description: "Studied Computer Systems, Advanced Algorithms, Data Structures, Database Programming and Administration, Computer Networking, Object-Oriented Programming, User Interface Design, Operating Systems, and Web Development.",
       technologies: ["GPA 3.7", "Algorithms", "Data Structures", "Networking"]
     }
