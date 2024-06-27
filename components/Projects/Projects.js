@@ -81,7 +81,7 @@ const Projects = () => {
               </span>
               <span className="whitespace-nowrap">
                 <span className="border-b border-transparent pb-px transition group-hover:border-accent dark:group-hover:border-accent motion-reduce:transition-none">
-                  Projects
+                  {" "}Projects
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

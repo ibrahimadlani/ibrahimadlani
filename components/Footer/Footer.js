@@ -52,7 +52,7 @@ const Footer = () => {
           rel="noreferrer noopener"
           aria-label="Vercel (opens in a new tab)"
         >
-          Vercel
+          AWS Amplify
         </a>
         . The text is elegantly set in the{" "}
         <a

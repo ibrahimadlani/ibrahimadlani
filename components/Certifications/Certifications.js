@@ -48,7 +48,7 @@ const certificationsData = [
     title: "Scientific Computing with Python",
     date: "February 2021",
     company: "freeCodeCamp",
-    certificationUrl: "https://freecodecamp.org/certification/ibrahimadlani/javascript-algorithms-and-data-structures",
+    certificationUrl: "https://freecodecamp.org/certification/ibrahimadlani/scientific-computing-with-python-v7",
     imageAlt: "freeCodeCamp logo",
     image: {
       light: freecodecamp_logo,
