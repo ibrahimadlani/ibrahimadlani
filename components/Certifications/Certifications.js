@@ -2,7 +2,7 @@ import CertificationsItem from "./CertificationsItem";
 import ibm_logo from "../../app/images/companies/ibm.svg";
 import imb_dark_logo from "../../app/images/companies/ibm_dark.svg";
 import freecodecamp_logo from "../../app/images/companies/freecodecamp.svg";
-import freecodecamp_logo_dark_logo from "../../app/images/companies/fcc_dark.svg";
+import freecodecamp_logo_dark_logo from "../../app/images/companies/freecodecamp_dark.svg";
 
 /**
  * Certifications component to display a list of certifications.
