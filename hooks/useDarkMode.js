@@ -14,12 +14,10 @@ const useDarkMode = () => {
   }, []);
 
   const toggleDarkMode = () => {
-    
     setIsDarkMode((prevMode) => {
       const newMode = !prevMode;
       localStorage.setItem('theme', newMode ? 'dark' : 'light');
       document.documentElement.classList.toggle('dark', newMode);
-      console.log(newMode)
       return newMode;
     });
   };
