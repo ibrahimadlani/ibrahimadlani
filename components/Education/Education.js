@@ -1,5 +1,6 @@
 import React from 'react';
 import EducationItem from './EducationItem';
+import useDarkMode from '../../hooks/useDarkMode';
 
 /**
  * Main Education component
@@ -8,6 +9,8 @@ import EducationItem from './EducationItem';
  * @returns {JSX.Element} The Education component.
  */
 const Education = () => {
+  const [isDarkMode] = useDarkMode(); // Use the custom hook to get the current theme
+
   // Array to store experience information
   const experiences = [
     {
@@ -72,7 +75,7 @@ const Education = () => {
         <div className="mt-12">
           <a
             className="inline-flex items-baseline font-medium leading-tight text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-accent dark:focus-visible:text-accent font-semibold text-primary group/link text-base"
-            href="/resume.pdf"
+            href={isDarkMode ? '/resume_ibrahimadlani_dark.pdf' : '/resume_ibrahimadlani_light.pdf'}
             target="_blank"
             rel="noreferrer noopener"
             aria-label="View Full Résumé (opens in a new tab)"
@@ -91,8 +94,7 @@ const Education = () => {
                   <path
                     fillRule="evenodd"
                     d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                    clipRule="evenodd"
-                  ></path>
+                  />
                 </svg>
               </span>
             </span>

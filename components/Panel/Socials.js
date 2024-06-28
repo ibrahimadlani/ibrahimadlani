@@ -4,6 +4,7 @@ import MailIcon from '../icons/MailIcon';
 import PhoneIcon from '../icons/PhoneIcon';
 import DarkLightIcon from '../icons/DarkLightIcon';
 import useDarkMode from '../../hooks/useDarkMode';
+import ResumeIcon from '../icons/ResumeIcon';
 
 /**
  * Socials component for displaying social media links.
@@ -42,11 +43,18 @@ const Socials = () => {
       icon: <MailIcon />,
     },
     {
-      href: "#", // Setting it to "#" as it will trigger the toggle function
+      href: "#",
       ariaLabel: "Toggle dark/light mode",
       title: "Toggle Dark Mode",
       icon: <DarkLightIcon isDarkMode={isDarkMode} />,
       onClick: toggleDarkMode,
+    },
+    ,
+    {
+      href: "/resume_ibrahimadlani_light.pdf",
+      ariaLabel: "Download resume",
+      title: "Download my resume !",
+      icon: <ResumeIcon />,
     }
   ];
 
