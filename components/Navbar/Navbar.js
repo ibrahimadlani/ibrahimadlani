@@ -53,7 +53,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  });
 
   return (
     <nav className="nav hidden lg:block" aria-label="In-page jump links">
