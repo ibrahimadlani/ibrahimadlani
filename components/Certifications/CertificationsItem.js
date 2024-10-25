@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import useDarkMode from "../../hooks/useDarkMode";
 
 /**
  * CertificationsItem component for displaying an individual certification.
@@ -17,14 +16,6 @@ import useDarkMode from "../../hooks/useDarkMode";
  * @returns {JSX.Element} The CertificationsItem component.
  */
 const CertificationsItem = ({ date, title, company, certificationUrl, imageAlt, image }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    console.log("Theme from localStorage:", theme); // Log the theme value
-    setIsDarkMode(theme === "dark");
-  }, []);
-
   return (
     <li className="mb-12">
       <div className="group relative grid grid-cols-8 gap-4 transition-all sm:items-center sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
