@@ -46,7 +46,7 @@ const Footer = () => {
         </a>
         , and deployed seamlessly with{" "}
         <a
-          href="https://vercel.com/"
+          href="https://aws.amazon.com/amplify/"
           className="font-medium text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-accent"
           target="_blank"
           rel="noreferrer noopener"

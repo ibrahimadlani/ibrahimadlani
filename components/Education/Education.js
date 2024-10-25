@@ -1,6 +1,7 @@
 import React from 'react';
 import EducationItem from './EducationItem';
-import useDarkMode from '../../hooks/useDarkMode';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
 /**
  * Main Education component
@@ -9,7 +10,8 @@ import useDarkMode from '../../hooks/useDarkMode';
  * @returns {JSX.Element} The Education component.
  */
 const Education = () => {
-  const [isDarkMode] = useDarkMode(); // Use the custom hook to get the current theme
+  const { theme } = useTheme();
+
 
   // Array to store experience information
   const experiences = [
@@ -50,7 +52,7 @@ const Education = () => {
       aria-label="Work experience"
     >
       {/* Sticky header for the section on small screens */}
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen sm:bg-transparent bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
         <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">
           Education
         </h2>
@@ -75,7 +77,7 @@ const Education = () => {
         <div className="mt-12">
           <a
             className="inline-flex items-baseline font-medium leading-tight text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-accent dark:focus-visible:text-accent font-semibold text-primary group/link text-base"
-            href={isDarkMode ? '/resume_ibrahimadlani_dark.pdf' : '/resume_ibrahimadlani_light.pdf'}
+            href={`${theme === 'dark' ? '/resume_ibrahimadlani_D20240925.pdf' : '/resume_ibrahimadlani_L20240925.pdf'}`}
             target="_blank"
             rel="noreferrer noopener"
             aria-label="View Full Résumé (opens in a new tab)"
