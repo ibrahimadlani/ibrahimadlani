@@ -52,7 +52,7 @@ const Education = () => {
       aria-label="Work experience"
     >
       {/* Sticky header for the section on small screens */}
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen sm:bg-transparent bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen sm:bg-transparent bg-background/75 dark:bg-darkBackground/75 dark:md:bg-transparent px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
         <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">
           Education
         </h2>
