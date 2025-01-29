@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
         {/* Cursor-Following Gradient */}
         {isDesktop && isGradientEnabled && (
           <div
-            className="absolute inset-0 pointer-events-none light:bg-transparent"
+            className="absolute inset-0 pointer-events-none"
             style={{
               background: `radial-gradient(600px at ${position.x}px ${position.y +
                 scrollY}px, rgba(255, 255, 255, 0.04), transparent 80%)`,

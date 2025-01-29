@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+
+# Host
+Host: https://ibrahimadlani.fr
+
+# Sitemaps
+Sitemap: https://ibrahimadlani.fr/sitemap.xml
