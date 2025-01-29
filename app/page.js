@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Head from "next/head";
 import Header from "../components/Panel/Header";
 import Main from "../components/Panel/Main";
 /**
@@ -12,24 +11,23 @@ import Main from "../components/Panel/Main";
  * @returns {JSX.Element} The Home component.
  */
 
+const metadata = {
+  title: "Ibrahim Adlani - Software Engineer",
+  description: "Ibrahim Adlani's portfolio showcasing projects and skills in software engineering.",
+  ogTitle: "Ibrahim Adlani - Software Engineer",
+  ogDescription: "Explore the projects and skills of Ibrahim Adlani, a software engineer specialized in Django, Restful APIs, Python, and JavaScript.",
+  ogImage: "/images/profile.jpg",
+  ogUrl: "https://www.ibrahimadlani.com",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Ibrahim Adlani - Software Engineer",
+  twitterDescription: "Explore the projects and skills of Ibrahim Adlani, a software engineer specialized in Django, Restful APIs, Python, and JavaScript.",
+  twitterImage: "/images/profile.jpg"
+}
+
 export const Home = () => {
 
   return (
     <>
-      <Head>
-        <title>Ibrahim Adlani - Software Engineer</title>
-        <meta name="description" content="Ibrahim Adlani's portfolio showcasing projects and skills in software engineering." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Ibrahim Adlani - Software Engineer" />
-        <meta property="og:description" content="Explore the projects and skills of Ibrahim Adlani, a software engineer specialized in Django, Restful APIs, Python, and JavaScript." />
-        <meta property="og:image" content="/images/profile.jpg" />
-        <meta property="og:url" content="https://www.ibrahimadlani.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ibrahim Adlani - Software Engineer" />
-        <meta name="twitter:description" content="Explore the projects and skills of Ibrahim Adlani, a software engineer specialized in Django, Restful APIs, Python, and JavaScript." />
-        <meta name="twitter:image" content="/images/profile.jpg" />
-      </Head>
-
       <div className="lg:flex lg:justify-between lg:gap-4 transition">
         <Header />
         <Main />

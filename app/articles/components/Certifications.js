@@ -1,16 +1,7 @@
- import CertificationsItem from "../components/CertificationsItem";
+ import CertificationsItem from "./CertificationsItem";
  
  // Certification data
   const certifications = [
-
-  {
-    year: 2024,
-    project: "Test Of English for International Communication",
-    madeAt: "ETS",
-    builtWith: ["English", "Communication"],
-    link: "https://www.etsglobal.org/fr/en/digital-score-report/95A1C364CF4BC38D1D702D808A8249FFEBF27BF11C785F6464CA05E76C390B25UVpXanM3VUd0YXUzRHpIWWszQ2ZDWGFjb1I2SURIbnFkRzVYQTZWbDROMHdLaHJx",
-    label: "Certification",
-   },
     {
       year: 2023,
       project: "Cyber Security Operations and Technology Solutions",

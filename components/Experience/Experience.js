@@ -1,5 +1,6 @@
 import React from 'react';
 import ExperienceItem from './ExperienceItem';
+import { useTheme } from 'next-themes';
 
 /**
  * Main Experience component
@@ -9,6 +10,7 @@ import ExperienceItem from './ExperienceItem';
  */
 
 const Experience = () => {
+  const { theme } = useTheme();
   // Array to store experience information
   const experiences = [
     {
@@ -104,7 +106,7 @@ const Experience = () => {
       aria-label="Work experience"
     >
       {/* Sticky header for the section on small screens */}
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen sm:bg-transparent bg-background/75 dark:bg-darkBackground/75 dark:md:bg-transparent  px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
         <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">
           Experience
         </h2>
@@ -129,7 +131,7 @@ const Experience = () => {
         <div className="mt-12">
           <a
             className="inline-flex items-baseline font-medium leading-tight text-primary dark:text-darkPrimary hover:text-accent dark:hover:text-accent focus-visible:text-accent dark:focus-visible:text-accent font-semibold text-primary group/link text-base"
-            href="/resume.pdf"
+            href={`${theme === 'dark' ? '/resume_ibrahimadlani_D20240925.pdf' : '/resume_ibrahimadlani_L20240925.pdf'}`}
             target="_blank"
             rel="noreferrer noopener"
             aria-label="View Full Résumé (opens in a new tab)"

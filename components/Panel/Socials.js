@@ -1,10 +1,14 @@
+'use client';
+
 import GitHubIcon from '../icons/GitHubIcon';
 import LinkedInIcon from '../icons/LinkedInIcon';
 import MailIcon from '../icons/MailIcon';
 import PhoneIcon from '../icons/PhoneIcon';
 import DarkLightIcon from '../icons/DarkLightIcon';
-import useDarkMode from '../../hooks/useDarkMode';
 import ResumeIcon from '../icons/ResumeIcon';
+
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 /**
  * Socials component for displaying social media links.
@@ -15,7 +19,21 @@ import ResumeIcon from '../icons/ResumeIcon';
  */
 
 const Socials = () => {
-  const [isDarkMode, toggleDarkMode] = useDarkMode();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Assurer que le composant est monté pour éviter les problèmes de SSR avec next-themes
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // Ne pas rendre le composant tant qu'il n'est pas monté
+  }
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   const socialLinks = [
     {
@@ -46,12 +64,11 @@ const Socials = () => {
       href: "#",
       ariaLabel: "Toggle dark/light mode",
       title: "Toggle Dark Mode",
-      icon: <DarkLightIcon isDarkMode={isDarkMode} />,
-      onClick: toggleDarkMode,
+      icon: <DarkLightIcon isDarkMode={theme === 'dark'} />,
+      onClick: toggleTheme,
     },
-    ,
     {
-      href: "/resume_ibrahimadlani_light.pdf",
+      href: `${theme === 'dark' ? '/resume_ibrahimadlani_D20240925.pdf' : '/resume_ibrahimadlani_L20240925.pdf'}`,
       ariaLabel: "Download resume",
       title: "Download my resume !",
       icon: <ResumeIcon />,

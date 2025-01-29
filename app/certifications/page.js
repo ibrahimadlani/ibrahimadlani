@@ -1,4 +1,4 @@
-import Head from "next/head";
+
 import Certifications from "./components/Certifications";
 
 /**
@@ -16,7 +16,6 @@ export const Home = () => {
     title: "Ibrahim Adlani - Software Engineer",
     description:
       "Ibrahim Adlani's portfolio showcasing projects and skills in software engineering.",
-    viewport: "width=device-width, initial-scale=1",
     ogTitle: "Ibrahim Adlani - Software Engineer",
     ogDescription:
       "Explore the projects and skills of Ibrahim Adlani, a software engineer specialized in Django, Restful APIs, Python, and JavaScript.",
@@ -30,20 +29,7 @@ export const Home = () => {
   };
 
   return (
-    <>
-      <Head>
-        <title>{metaTags.title}</title>
-        <meta name="description" content={metaTags.description} />
-        <meta name="viewport" content={metaTags.viewport} />
-        <meta property="og:title" content={metaTags.ogTitle} />
-        <meta property="og:description" content={metaTags.ogDescription} />
-        <meta property="og:image" content={metaTags.ogImage} />
-        <meta property="og:url" content={metaTags.ogUrl} />
-        <meta name="twitter:card" content={metaTags.twitterCard} />
-        <meta name="twitter:title" content={metaTags.twitterTitle} />
-        <meta name="twitter:description" content={metaTags.twitterDescription} />
-        <meta name="twitter:image" content={metaTags.twitterImage} />
-      </Head>
+    
       <div className="lg:py-24">
         <a
           className="group mb-2 inline-flex items-center font-semibold leading-tight text-accent dark:text-darkAccent"
@@ -69,7 +55,7 @@ export const Home = () => {
         </h1>
         <Certifications />
       </div>
-    </>
+    
   );
 };
 

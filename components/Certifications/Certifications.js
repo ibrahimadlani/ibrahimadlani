@@ -3,6 +3,8 @@ import ibm_logo from "../../app/images/companies/ibm.svg";
 import imb_dark_logo from "../../app/images/companies/ibm_dark.svg";
 import freecodecamp_logo from "../../app/images/companies/freecodecamp.svg";
 import freecodecamp_logo_dark_logo from "../../app/images/companies/freecodecamp_dark.svg";
+import ets_logo from "../../app/images/companies/ets.svg";
+import ets_dark_logo from "../../app/images/companies/ets_dark.svg";
 
 /**
  * Certifications component to display a list of certifications.
@@ -11,6 +13,17 @@ import freecodecamp_logo_dark_logo from "../../app/images/companies/freecodecamp
  */
 
 const certificationsData = [
+  {
+    title: "Test Of English for International Communication",
+    date: "June 2024",
+    company: "ETS",
+    certificationUrl: "https://www.etsglobal.org/fr/en/digital-score-report/95A1C364CF4BC38D1D702D808A8249FFEBF27BF11C785F6464CA05E76C390B25UVpXanM3VUd0YXUzRHpIWWszQ2ZDWGFjb1I2SURIbnFkRzVYQTZWbDROMHdLaHJx",
+    imageAlt: "ETS logo",
+    image: {
+      light: ets_logo,
+      dark: ets_dark_logo
+    }
+  },
   {
     title: "Cyber Sec. Operations and Tech. Solutions",
     date: "January 2020",
@@ -65,7 +78,7 @@ const Certifications = () => {
       aria-label="Work experience"
     >
       {/* Sticky header for the section on small screens */}
-      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 dark:bg-darkBackground/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen sm:bg-transparent bg-background/75 dark:bg-darkBackground/75  dark:md:bg-transparent  px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0">
         <h2 className="text-sm font-bold uppercase tracking-widest text-primary dark:text-darkPrimary">
           Certifications
         </h2>

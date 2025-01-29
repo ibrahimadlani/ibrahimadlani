@@ -69,7 +69,7 @@ const ExperienceItem = ({
               </div>
             </div>
           </h3>
-          <ul className="list-image-[url(../../app/images/tick.svg)] mt-2 text-sm leading-normal text-secondary dark:text-darkSecondary">
+          <ul className="list-image-[url(../../app/images/tick.svg)] mt-2 text-sm leading-normal text-secondary dark:text-darkSecondary list-inside">
             {descriptions.map((description, index) => (
               <li key={index}>{description}</li>
             ))}
