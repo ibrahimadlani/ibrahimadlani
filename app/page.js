@@ -28,7 +28,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="lg:flex lg:justify-between lg:gap-4 transition w-screen">
+      <div className="lg:flex lg:justify-between lg:gap-4 transition">
         <Header />
         <Main />
       </div>
