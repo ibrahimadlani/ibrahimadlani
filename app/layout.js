@@ -1,76 +1,78 @@
-"use client";
-
 import { Inter } from "next/font/google";
+
+import Providers from "@/components/layout/Providers";
+import {
+  SITE_AUTHOR,
+  SITE_DESCRIPTION,
+  SITE_ROLE,
+  SITE_URL,
+} from "@/lib/site";
 import "./styles/globals.css";
-import { ThemeProvider } from "next-themes";
-import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+/**
+ * Metadata inherited by every route. Individual pages override `title` and
+ * `description`; the rest cascades.
+ *
+ * The Open Graph image is resolved automatically by Next from
+ * `app/opengraph-image.png`.
+ */
+export const metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_AUTHOR} - ${SITE_ROLE}`,
+    template: `%s - ${SITE_AUTHOR}`,
+  },
+  description: SITE_DESCRIPTION,
+  authors: [{ name: SITE_AUTHOR, url: SITE_URL }],
+  creator: SITE_AUTHOR,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: `${SITE_AUTHOR} - ${SITE_ROLE}`,
+    title: `${SITE_AUTHOR} - ${SITE_ROLE}`,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_AUTHOR} - ${SITE_ROLE}`,
+    description: SITE_DESCRIPTION,
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+};
+
+/**
+ * Root layout: the only place that renders `<html>` and `<body>`.
+ *
+ * `<body>` is `relative` so the cursor gradient can span the document, and
+ * `suppressHydrationWarning` is required because next-themes writes the theme
+ * class onto `<html>` before React hydrates.
+ *
+ * @param {Object} props
+ * @param {React.ReactNode} props.children - The rendered route.
+ * @returns {JSX.Element}
+ */
 export default function RootLayout({ children }) {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(true);
-  const [isGradientEnabled, setIsGradientEnabled] = useState(false);
-
-  // Enable/disable gradient based on the theme
-  useEffect(() => {
-    const theme = localStorage.getItem("theme") || "light"; // Default to light if not set
-    setIsGradientEnabled(theme !== "light"); // Enable gradient only if theme is not light
-  }, []);
-
-  // Track scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Track screen size to disable gradient on mobile
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768); // Disable for screens < 768px
-    };
-
-    handleResize(); // Run on mount
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Handle mouse move to update gradient position
-  const handleMouseMove = (e) => {
-    if (isDesktop && isGradientEnabled) {
-      setPosition({ x: e.clientX, y: e.clientY });
-    }
-  };
-
   return (
-    <html lang="en" className="scroll-smooth transition" suppressHydrationWarning>
-      <head />
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-background dark:bg-darkBackground text-secondary dark:text-darkSecondary leading-relaxed antialiased selection:bg-accent selection:text-background transition-colors duration-200 ease-in-out overflow-x-hidden relative`}
-        onMouseMove={handleMouseMove}
+        className={`${inter.className} relative overflow-x-hidden bg-background text-secondary antialiased transition-colors duration-200 ease-in-out selection:bg-accent selection:text-background dark:bg-darkBackground dark:text-darkSecondary leading-relaxed`}
       >
-        {/* Cursor-Following Gradient */}
-        {isDesktop && isGradientEnabled && (
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: `radial-gradient(600px at ${position.x}px ${position.y +
-                scrollY}px, rgba(255, 255, 255, 0.04), transparent 80%)`,
-            }}
-          />
-        )}
-
-        {/* Theme & Content Wrapper */}
-        <ThemeProvider attribute="class">
-          <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 relative">
+        <Providers>
+          <div className="relative mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
             <div className="lg:flex lg:justify-between lg:gap-4">{children}</div>
           </div>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

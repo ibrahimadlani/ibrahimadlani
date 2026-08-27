@@ -1,109 +1,100 @@
-'use client';
+"use client";
 
-import GitHubIcon from '../icons/GitHubIcon';
-import LinkedInIcon from '../icons/LinkedInIcon';
-import MailIcon from '../icons/MailIcon';
-import PhoneIcon from '../icons/PhoneIcon';
-import DarkLightIcon from '../icons/DarkLightIcon';
-import ResumeIcon from '../icons/ResumeIcon';
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { socialLinks } from "@/data/socials";
+import { resumeHref } from "@/lib/resume";
+import DarkLightIcon from "@/components/icons/DarkLightIcon";
+import GitHubIcon from "@/components/icons/GitHubIcon";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
+import MailIcon from "@/components/icons/MailIcon";
+import PhoneIcon from "@/components/icons/PhoneIcon";
+import ResumeIcon from "@/components/icons/ResumeIcon";
+import Tooltip from "@/components/ui/Tooltip";
+
+/** Maps the `icon` key of `data/socials.js` onto a component. */
+const ICONS = {
+  github: GitHubIcon,
+  linkedin: LinkedInIcon,
+  mail: MailIcon,
+  phone: PhoneIcon,
+};
+
+const ITEM_CLASS_NAME = "block hover:text-primary dark:hover:text-darkPrimary";
 
 /**
- * Socials component for displaying social media links.
- * This component provides links to various social media profiles such as GitHub, LinkedIn, CodePen, Instagram, Twitter, and Goodreads.
- * Each link includes an SVG icon and accessibility features like aria-label and title.
+ * Contact row under the header: social profiles, the theme toggle and the
+ * résumé download. Each control names itself with a `Tooltip` on hover and on
+ * focus; none carries a native `title`, which would stack a second, unstyled
+ * bubble on top of it.
  *
- * @returns {JSX.Element} The Socials component.
+ * Only the two theme-dependent items wait for mount — rendering the whole row
+ * conditionally used to make every icon pop in after hydration. Their markup is
+ * reserved from the first paint so nothing shifts.
+ *
+ * @returns {JSX.Element}
  */
-
 const Socials = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Assurer que le composant est monté pour éviter les problèmes de SSR avec next-themes
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // `resolvedTheme` is only meaningful in the browser: rendering it on the
+  // server would produce markup that does not match the client.
+  useEffect(() => setMounted(true), []);
 
-  if (!mounted) {
-    return null; // Ne pas rendre le composant tant qu'il n'est pas monté
-  }
-
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
-  const socialLinks = [
-    {
-      href: "https://github.com/ibrahimadlani",
-      ariaLabel: "GitHub (opens in a new tab)",
-      title: "GitHub",
-      icon: <GitHubIcon />,
-    },
-    {
-      href: "https://www.linkedin.com/in/ibrahimadlani/",
-      ariaLabel: "LinkedIn (opens in a new tab)",
-      title: "LinkedIn",
-      icon: <LinkedInIcon />,
-    },
-    {
-      href: "tel:+33695670877",
-      ariaLabel: "Phone (opens in a tooltip and copy to clipboard)",
-      title: "Phone",
-      icon: <PhoneIcon />,
-    },
-    {
-      href: "mailto:ibrahim@adlani.com",
-      ariaLabel: "Mail (opens in a tooltip and copy to clipboard)",
-      title: "Mail",
-      icon: <MailIcon />,
-    },
-    {
-      href: "#",
-      ariaLabel: "Toggle dark/light mode",
-      title: "Toggle Dark Mode",
-      icon: <DarkLightIcon isDarkMode={theme === 'dark'} />,
-      onClick: toggleTheme,
-    },
-    {
-      href: `${theme === 'dark' ? '/resume_ibrahimadlani_D20240925.pdf' : '/resume_ibrahimadlani_L20240925.pdf'}`,
-      ariaLabel: "Download resume",
-      title: "Download my resume !",
-      icon: <ResumeIcon />,
-    }
-  ];
+  const isDarkMode = resolvedTheme === "dark";
+  const toggleTheme = () => setTheme(isDarkMode ? "light" : "dark");
 
   return (
     <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
-      {socialLinks.map((link, index) => (
-        <li key={index} className="mr-5 text-xs shrink-0">
-          {link.onClick ? (
-            <div
-              className="block hover:text-primary dark:hover:text-darkPrimary cursor-pointer"
-              onClick={link.onClick}
-              aria-label={link.ariaLabel}
-              title={link.title}
-            >
-              <span className="sr-only">{link.title}</span>
-              {link.icon}
-            </div>
-          ) : (
-            <a
-              className="block hover:text-primary dark:hover:text-darkPrimary"
-              href={link.href}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={link.ariaLabel}
-              title={link.title}
-            >
-              <span className="sr-only">{link.title}</span>
-              {link.icon}
-            </a>
-          )}
-        </li>
-      ))}
+      {socialLinks.map((link) => {
+        const Icon = ICONS[link.icon];
+
+        return (
+          <li key={link.href} className="mr-5 shrink-0 text-xs">
+            <Tooltip label={link.title}>
+              <a
+                className={ITEM_CLASS_NAME}
+                href={link.href}
+                aria-label={link.ariaLabel}
+                {...(link.external
+                  ? { target: "_blank", rel: "noreferrer noopener" }
+                  : {})}
+              >
+                <Icon />
+              </a>
+            </Tooltip>
+          </li>
+        );
+      })}
+
+      <li className="mr-5 shrink-0 text-xs">
+        <Tooltip label="Toggle theme">
+          <button
+            type="button"
+            className={`${ITEM_CLASS_NAME} cursor-pointer`}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+          >
+            <DarkLightIcon isDarkMode={mounted && isDarkMode} />
+          </button>
+        </Tooltip>
+      </li>
+
+      <li className="mr-5 shrink-0 text-xs">
+        <Tooltip label="Download my résumé">
+          <a
+            className={ITEM_CLASS_NAME}
+            href={resumeHref(mounted ? resolvedTheme : undefined)}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Download my résumé (opens in a new tab)"
+          >
+            <ResumeIcon />
+          </a>
+        </Tooltip>
+      </li>
     </ul>
   );
 };
