@@ -1,44 +1,37 @@
+import Link from "next/link";
+
+import { SITE_AUTHOR } from "@/lib/site";
+import Navbar from "@/components/Navbar/Navbar";
 import Headshot from "./Headshot";
-import Navbar from "../Navbar/Navbar";
 import Socials from "./Socials";
 
 /**
- * Header component for the website.
- * This component contains the headshot, name, title, bio, navigation bar, and social links.
- * It is styled to be sticky on large screens and includes responsive design elements.
+ * Identity panel: portrait, name, role, short bio, in-page navigation and
+ * contact links. Sticks to the viewport alongside the content from `lg` up.
  *
- * @returns {JSX.Element} The Header component.
+ * @returns {JSX.Element}
  */
+const Header = () => (
+  <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+    <div>
+      <Headshot />
 
-const Header = () => {
-  return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-      <div>
-        {/* Headshot component */}
-        <Headshot />
+      <h1 className="text-4xl font-bold tracking-tight text-primary dark:text-darkPrimary sm:text-5xl">
+        <Link href="/">{SITE_AUTHOR}</Link>
+      </h1>
+      <h2 className="mt-3 text-lg font-medium tracking-tight text-primary dark:text-darkPrimary sm:text-xl">
+        Junior Software Engineer
+      </h2>
 
-        {/* Name and Title */}
-        <h1 className="text-4xl font-bold tracking-tight text-primary dark:text-darkPrimary sm:text-5xl">
-          <a href="/">Ibrahim Adlani</a>
-        </h1>
-        <h2 className="mt-3 text-lg font-medium tracking-tight text-primary dark:text-darkPrimary sm:text-xl">
-          Junior Software Engineer
-        </h2>
+      <p className="mt-4 max-w-xs leading-normal text-secondary dark:text-darkSecondary">
+        I build dynamic full-stack web applications with a focus on performance.
+      </p>
 
-        {/* Bio */}
-        <p className="mt-4 max-w-xs leading-normal text-secondary dark:text-darkSecondary">
-          I build dynamic full-stack web applications with a focus on
-          performance.
-        </p>
+      <Navbar />
+    </div>
 
-        {/* Navigation Bar */}
-        <Navbar />
-      </div>
-
-      {/* Social Links */}
-      <Socials />
-    </header>
-  );
-};
+    <Socials />
+  </header>
+);
 
 export default Header;

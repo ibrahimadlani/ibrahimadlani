@@ -1,30 +1,25 @@
-import Certifications from "../Certifications/Certifications";
-import About from "../About/About";
-import Education from "../Education/Education";
-import Experience from "../Experience/Experience";
-import Projects from "../Projects/Projects";
-import Footer from "../Footer/Footer";
+import About from "@/components/About/About";
+import Certifications from "@/components/Certifications/Certifications";
+import Education from "@/components/Education/Education";
+import Experience from "@/components/Experience/Experience";
+import Footer from "@/components/Footer/Footer";
+import Projects from "@/components/Projects/Projects";
 
 /**
- * Main component for the main content area of the webpage.
- * This component provides the main content container, styled with padding and responsive width.
- * The id attribute is set to "content" for accessibility and navigation purposes.
+ * Scrolling half of the homepage. `id="content"` is the target of the skip link
+ * and of in-page navigation.
  *
- * @returns {JSX.Element} The Main component.
+ * @returns {JSX.Element}
  */
+const Main = () => (
+  <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
+    <About />
+    <Experience />
+    <Education />
+    <Projects />
+    <Certifications />
+    <Footer />
+  </main>
+);
 
-const Main = () => {
-    return (
-      <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
-        <About />
-        <Experience />
-        <Education />
-        <Projects />
-        <Certifications />
-        <Footer />
-        
-      </main>
-    );
-  };
-  
-  export default Main;
+export default Main;

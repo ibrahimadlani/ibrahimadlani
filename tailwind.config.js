@@ -1,30 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  // Dark mode is driven by a `class` on <html>, written by next-themes.
+  darkMode: "class",
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/certifications/*.{js,ts,jsx,tsx,mdx}",
-    "./app/certifications/**/*.{js,ts,jsx,tsx,mdx}",
-    
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./data/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        accent: '#f97316',  // Couleur d'accentuation
-        primary: '#302020',  // Couleur principale du texte
-        secondary: '#837979',  // Couleur secondaire du texte
-        muted: '#837979',  // Couleur de texte atténuée
-        info: '#C4CFDD',  // Couleur d'information du texte
-        background: '#fff',  // Couleur de fond
+        // `accent` is shared by both themes; every other token has a `dark`
+        // counterpart applied through the `dark:` variant.
+        accent: "#f97316",
 
-        // Couleurs pour le mode sombre
-        darkBackground: '#0f172a',
-        darkPrimary: '#e2e8f0',
-        darkSecondary: '#94a3b8',
-        darkMuted: '#64748b',
-        darkInfo: '#9ca3af',
+        primary: "#302020", // body headings and emphasised text
+        secondary: "#837979", // body copy
+        muted: "#837979", // metadata, captions
+        info: "#C4CFDD",
+        background: "#fff",
+
+        darkPrimary: "#e2e8f0",
+        darkSecondary: "#94a3b8",
+        darkMuted: "#64748b",
+        darkInfo: "#9ca3af",
+        darkBackground: "#0f172a",
       },
     },
   },
